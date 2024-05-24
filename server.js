@@ -17,8 +17,8 @@ app.post('/submit', (req, res) => {
     });
 
     const mailOptions = {
-        from: 'your-email@gmail.com',
-        to: 'your-email@gmail.com',
+        from: 'oscarzechall@gmail.com',
+        to: 'oscarzechall@gmail.com',
         subject: 'User Text Submission',
         text: `User entered: ${userText}`,
     };
