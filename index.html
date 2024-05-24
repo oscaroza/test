@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Enter Text</title>
+</head>
+<body>
+    <form id="textForm">
+        <label for="userText">Enter some text:</label>
+        <input type="text" id="userText" name="userText">
+        <button type="button" onclick="sendData()">Submit</button>
+    </form>
+    <script>
+        function sendData() {
+            const userText = document.getElementById('userText').value;
+            fetch('https://your-vercel-url/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ text: userText }),
+            })
+            .then(response => response.text())
+            .then(data => alert('Data sent: ' + data))
+            .catch(error => console.error('Error:', error));
+        }
+    </script>
+</body>
+</html>
